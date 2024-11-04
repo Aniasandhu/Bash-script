@@ -1,12 +1,17 @@
 #!/bin/bash
+
+TARGET=$(( ( RANDOM % 10 ) + 1 ))
+
 while true; do
-echo "Enter a number greater than 5:"
-read NUMBER
-if [ "$NUMBER" -gt 5 ]; then
- echo "You entered the correct number: $NUMBER"
-break  
-else
-echo "Number is 5 or less. Please try again."
-fi
+  echo "Guess the number (between 1 and 10):"
+  read GUESS
+
+  if [ "$GUESS" -eq "$TARGET" ]; then
+    echo "Congratulations! You guessed the correct number: $TARGET"
+    break  
+  else
+    echo "Not the number, try again!"
+  fi
 done
+
 
